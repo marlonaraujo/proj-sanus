@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.2.0-1 (tags/2.2.0u1-7139; 2012-06-02T10:55:19+0000) JAXWS-RI/2.2.6-2 JAXWS/2.2 svn-revision#unknown. --><xs:schema xmlns:tns="http://servico/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://servico/">
+
+<xs:element name="AlterarHospital" type="tns:AlterarHospital"/>
+
+<xs:element name="AlterarHospitalResponse" type="tns:AlterarHospitalResponse"/>
+
+<xs:element name="CadastrarHospital" type="tns:CadastrarHospital"/>
+
+<xs:element name="CadastrarHospitalResponse" type="tns:CadastrarHospitalResponse"/>
+
+<xs:element name="excluirHospital" type="tns:excluirHospital"/>
+
+<xs:element name="retornarHospital" type="tns:retornarHospital"/>
+
+<xs:element name="retornarHospitalPorCodigo" type="tns:retornarHospitalPorCodigo"/>
+
+<xs:element name="retornarHospitalPorCodigoResponse" type="tns:retornarHospitalPorCodigoResponse"/>
+
+<xs:element name="retornarHospitalResponse" type="tns:retornarHospitalResponse"/>
+
+<xs:complexType name="retornarHospital">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="retornarHospitalResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:anyType" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="excluirHospital">
+<xs:sequence>
+<xs:element name="codigo" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="retornarHospitalPorCodigo">
+<xs:sequence>
+<xs:element name="codigo" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="retornarHospitalPorCodigoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:hospitalBean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="hospitalBean">
+<xs:sequence>
+<xs:element name="codigo" type="xs:int" minOccurs="0"/>
+<xs:element name="nome" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="AlterarHospital">
+<xs:sequence>
+<xs:element name="codigo" type="xs:int"/>
+<xs:element name="nome" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="AlterarHospitalResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="CadastrarHospital">
+<xs:sequence>
+<xs:element name="nome" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="CadastrarHospitalResponse">
+<xs:sequence/>
+</xs:complexType>
+</xs:schema>
